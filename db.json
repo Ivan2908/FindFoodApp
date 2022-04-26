@@ -1,0 +1,79 @@
+{
+  "restaurants": [
+    {
+      "createdAt": 1650701745,
+      "name": "Starbucks",
+      "img": "https://www.infobae.com/new-resizer/YsQEMfZA0WA6AvrfNPJ9g5hCQPA=/992x661/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/CZHYZR6I74R5WS6E5CUCPLLSIY.jpg",
+      "rating": 4,
+      "description": "La pasión y la dedicación de nuestros baristas son lo que determinan la excelencia de tu café. Todos ellos han recibido una amplia formación. Es un sentimiento que les inculcamos desde el primer momento de su formación, con el lema “los últimos tres metros hasta la meta están en natuestras manos”.",
+      "category": "breakfast",
+      "reviews": 70,
+      "id_Restaurant": 1,
+      "id_cousin": 2
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "McDonalds",
+      "img": "https://assets.iprofesional.com/assets/jpg/2020/04/494792.jpg?6.3.0",
+      "rating": 5,
+      "description": "McDonald´s es una empresa global, es la compañía mundial líder de servicios de alimentos, con más de 35.000 restaurantes sirviendo aproximadamente a 70 millones de clientes en más de 100 países cada día",
+      "category": "allFoods",
+      "reviews": 145,
+      "id_Restaurant": 2,
+      "id_cousin": 2
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "Domino's pizza",
+      "img": "https://cdn.forbes.co/2021/04/dominos_pizza_cyber_monday.jpg",
+      "rating": 3.5,
+      "description": "McDonald´s es una empresa global, es la compañía mundial líder de servicios de alimentos, con más de 35.000 restaurantes sirviendo aproximadamente a 70 millones de clientes en más de 100 países cada día",
+      "category": "junkfood",
+      "reviews": 89,
+      "id_Restaurant": 3,
+      "id_cousin": 2
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "Pizza Hut",
+      "img": "https://foobe.com.ar/wp-content/uploads/2020/12/pizza-hut-scaled.jpeg",
+      "rating": 2,
+      "description": "Pizza Hut is an American multinational restaurant chain and international franchise founded in 1958 in Wichita, Kansas by Dan and Frank Carney. They serve their signature pan pizza and other dishes including pasta, breadsticks and desserts.",
+      "category": "junkfood",
+      "reviews": 3,
+      "id_Restaurant": 4,
+      "id_cousin": 1
+    }
+  ],
+
+  "cousinTypes": [
+    {
+      "createdAt": 1650701685,
+      "name": "Italiana",
+      "img": "https://bakeitwithlove.com/wp-content/uploads/2022/01/Spaghetti-Bolognese-sq.jpg",
+      "idCousinType": 1,
+      "restaurants": [4]
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "Americana",
+      "img": "https://as2.ftcdn.net/v2/jpg/02/10/97/65/1000_F_210976505_c4vXGI6NCIaV8qlANGNP1gDPIt2rjYjC.jpg",
+      "idCousinType": 2,
+      "restaurants": [1, 2, 3]
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "Japonesa",
+      "img": "https://www.tastingtable.com/img/gallery/20-japanese-dishes-you-need-to-try-at-least-once/intro-1644007893.webp",
+      "idCousinType": 3,
+      "restaurants": []
+    },
+    {
+      "createdAt": 1650701685,
+      "name": "Caribeña",
+      "img": "https://world.bookinghello.com/wp-content/uploads/2016/04/cocina-caribena2-1170x705.jpg",
+      "idCousinType": 4,
+      "restaurants": []
+    }
+  ]
+}
