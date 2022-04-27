@@ -14,6 +14,7 @@ This App is using Vue2 with TypeScript in Vite. Includes [vue-router](https://ro
 | Command     | Description                                        |
 | ----------- | -------------------------------------------------- |
 | dev         | Start devserver.                                   |
+| Start       | Start Fake Api JSserver for some data.             |
 | clean       | Clear devserver cache.                             |
 | build       | Build for production                               |
 | build:clean | Clear production build files.                      |
