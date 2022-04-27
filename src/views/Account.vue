@@ -75,33 +75,14 @@
               </div>
             </div>
           </div>
-          <!-- <v-row align="center" class="fill-height">
-            <v-col align-self="center" class="pa-0" cols="12">
-              <v-avatar class="profile" color="grey" size="164" tile rounded>
-                <v-img
-                  src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
-                />
-              </v-avatar>
-            </v-col>
-            <v-col class="py-0">
-              <v-list-item color="rgba(0, 0, 0, .4)" dark>
-                <v-list-item-content>
-                  <v-list-item-title class="text-h6">
-                    Marcus Obrien
-                  </v-list-item-title>
-                  <v-list-item-subtitle>Network Engineer</v-list-item-subtitle>
-                </v-list-item-content>
-              </v-list-item>
-            </v-col>
-          </v-row> -->
         </v-img>
       </v-col>
       <v-col class="col-12">
         <div class="box-main dashboard-box-main">
           <div class="box-sidebar border-content-column">
-            <div class="border border br-10">
+            <div class="border">
               <h1
-                class="grey--text text-12 pa-5 text-uppercase font-weight-regular"
+                class="grey--text text-subtitle-1 pa-5 text-uppercase font-weight-regular"
               >
                 Activity
               </h1>
@@ -120,8 +101,13 @@
                   </div>
                 </a>
               </div>
-              <div>
-                <a href="/dashboard/Photos" class="dashboard-sidebar-link">
+              <router-link
+                class="dashboard-sidebar-link"
+                :to="{
+                  name: 'Photos',
+                }"
+              >
+                <div>
                   <div class="px-4 d-flex justify-space-between align-center">
                     <div class="d-flex">
                       <i
@@ -133,8 +119,8 @@
                     </div>
                     <p class="mb-0">2</p>
                   </div>
-                </a>
-              </div>
+                </div>
+              </router-link>
               <div>
                 <a href="/dashboard/Followers" class="dashboard-sidebar-link">
                   <div class="px-4 d-flex justify-space-between align-center">
@@ -170,6 +156,9 @@
                 </a>
               </div>
             </div>
+          </div>
+          <div class="px-10 box-content">
+            <router-view />
           </div>
         </div>
       </v-col>
@@ -214,7 +203,7 @@ export default class SectionParts extends Vue {
   margin-left: auto;
 }
 .containerAvatar {
-  width: 1206px;
+  width: 95%;
 }
 .imgHero {
   background-image: linear-gradient(
@@ -225,9 +214,9 @@ export default class SectionParts extends Vue {
     url(https://foodhub-nuxt.vercel.app/_nuxt/img/cover-img.0f418da.png);
 }
 .v-avatar {
-  height: 160px;
-  min-width: 160px;
-  width: 160px;
+  height: 150px;
+  min-width: 155px;
+  width: 145px;
 }
 .avatar-upload {
   position: relative;
@@ -244,6 +233,9 @@ export default class SectionParts extends Vue {
   display: flex;
   position: relative;
 }
+.box-main .box-content {
+  width: calc(100% - 280px);
+}
 .box-main .box-sidebar {
   background-color: #fff;
   width: 280px;
@@ -251,6 +243,7 @@ export default class SectionParts extends Vue {
 }
 .border {
   border: 1px solid #dae1e7 !important;
+  border-radius: 10px !important;
 }
 .dashboard-box-main .dashboard-sidebar-link {
   color: #2b3445 !important;

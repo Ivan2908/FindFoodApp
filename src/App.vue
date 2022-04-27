@@ -2,6 +2,13 @@
   <v-app>
     <v-app-bar app elevate-on-scroll>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
+      <v-img
+        class="mx-1"
+        max-height="40"
+        max-width="40"
+        contain
+        src="./src/assets/logoNavBar.svg"
+      />
       <v-app-bar-title v-text="title" />
       <v-spacer />
       <v-btn icon @click="$store.dispatch('ConfigModule/toggleTheme')">
@@ -52,9 +59,9 @@
       </v-fade-transition>
     </v-main>
 
-    <v-footer dark padless>
-      <v-card flat tile class="indigo lighten-1 white--text text-center">
-        <v-card-text>
+    <v-footer padless>
+      <section class="footerSettings">
+        <div class="mb-3">
           <v-btn
             v-for="icon in icons"
             :key="icon"
@@ -65,21 +72,39 @@
               {{ icon }}
             </v-icon>
           </v-btn>
-        </v-card-text>
-
-        <v-card-text class="white--text pt-0">
+        </div>
+        <div>
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
-          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-          lacinia malesuada.
-        </v-card-text>
-
-        <v-card-text class="white--text">
+          Mauris cursus commodo interdum.
+        </div>
+        <div>
           {{ new Date().getFullYear() }} —
           <strong>Find Food</strong>
-        </v-card-text>
-      </v-card>
+        </div>
+      </section>
+
+      <div class="custom-shape-divider-bottom-1651036633">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            class="shape-fill"
+          />
+        </svg>
+      </div>
+      <!-- <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#0099ff"
+            fill-opacity="1"
+            d="M0,288L60,261.3C120,235,240,181,360,133.3C480,85,600,43,720,53.3C840,64,960,128,1080,144C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+          />
+        </svg>
+      </div> -->
     </v-footer>
 
     <v-overlay v-show="loading" z-index="999">
@@ -217,8 +242,28 @@ html {
   background-color: #ffff;
 }
 
+.theme--light.v-footer {
+  background-color: #ffff;
+}
+
+.theme--dark.v-footer {
+  background-color: #1e1e1e1e;
+}
+
 .theme--dark.v-app-bar.v-toolbar.v-sheet {
   background-color: #1e1e1e1e;
+}
+
+.footerSettings {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  justify-content: flex-end;
+  padding: 30px 30vw;
+  z-index: 9;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
@@ -237,8 +282,6 @@ html {
   box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-/*
-// Color scheme of scroll bar according to the theme
 .theme-- {
   &light {
     scrollbar-color: map-get($grey, 'lighten-2') map-get($grey, 'base');
@@ -254,5 +297,24 @@ html {
     }
   }
 }
-*/
+
+.custom-shape-divider-bottom-1651036633 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1651036633 svg {
+  position: relative;
+  display: block;
+  width: calc(120% + 1.3px);
+  height: 260px;
+}
+
+.custom-shape-divider-bottom-1651036633 .shape-fill {
+  fill: #4a90e2;
+}
 </style>

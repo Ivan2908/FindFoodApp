@@ -31,7 +31,7 @@ export default class HeroSection extends Vue {}
   background-image: url(https://foodhub-nuxt.vercel.app/_nuxt/img/header-bg.d39c465.png);
   background-size: cover;
   border-radius: 0.5rem;
-  width: calc(1136px + 2 * 24px);
+  width: 100%;
   max-width: 100%;
   height: 348px;
   padding-left: 24px;

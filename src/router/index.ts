@@ -87,6 +87,13 @@ const routes: RouteConfig[] = [
         ];
       },
     },
+    children: [
+      {
+        name: 'Photos',
+        path: 'photos',
+        component: () => import('@/views/PhotosAccount.vue'),
+      },
+    ],
   },
   {
     path: '*',
