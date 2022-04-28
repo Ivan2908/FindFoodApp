@@ -28,12 +28,17 @@ export default class SectionParts extends Vue {
     FoodDataService.getAllRestaurants()
       .then(response => {
         this.restaurants = response.data;
-        console.log(response.data);
       })
       .catch(error => {
         console.error(error);
       });
   }
+
+  // filteredList() {
+  //   return this.restaurants.filter(item => {
+  //     return item.name.toLowerCase().includes(this.search.toLowerCase());
+  //   });
+  // }
 
   mounted() {
     this.listAllRestaurant();

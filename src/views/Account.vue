@@ -1,11 +1,27 @@
 <template>
   <v-container class="py-15 container">
+    <v-navigation-drawer v-model="drawer" app absolute temporary>
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-icon>mdi-account-check</v-icon>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>Profile</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider />
+      <div :class="{ 'pa-4': $vuetify.breakpoint.smAndDown }">
+        <activity-profile-menu />
+      </div>
+    </v-navigation-drawer>
     <v-row class="d-flex flex-wrap">
       <v-col class="col-12 mb-10">
         <v-img cover height="200" class="imgHero">
           <div class="containerAvatar mt-8">
             <div
-              class="d-flex justify-center justify-md-space-between align-center mx-10 cover-image-content"
+              class="d-flex justify-center justify-md-space-between align-center mx-10"
             >
               <div
                 class="d-md-flex d-block align-center text-md-left text-center flex-wrap"
@@ -13,34 +29,35 @@
                 <div class="avatar-upload">
                   <v-avatar class="avatar profile" size="140">
                     <img
-                      src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"
+                      src="https://img1.freepng.es/20180713/aaw/kisspng-user-profile-linkedin-netwerk-money-order-fulfillm-round-face-5b494408cd2468.5239235115315282008403.jpg"
                       alt=""
                     />
                   </v-avatar>
                   <v-btn
                     class="avatar-upload-btn fab dark small grey lighten-4"
                   >
-                    <i
-                      aria-hidden="true"
-                      class="v-icon notranslate mdi mdi-camera theme--dark secondary--text"
-                      style="font-size: 20px"
-                    />
+                    <v-icon class="secondary--text">mdi-camera</v-icon>
                   </v-btn>
                   <v-input type="file" class="d-none" />
                 </div>
-                <div class="ml-2">
-                  <h2 class="white--text text-md-left text-center mb-1">
+                <div class="ml-2 hidden-sm-and-down">
+                  <h2
+                    :class="[
+                      'white--text',
+                      'text-md-left',
+                      'text-center',
+                      'mb-1',
+                      'text-h4',
+                      'font-weight-medium',
+                    ]"
+                  >
                     Marck Ton
                   </h2>
                   <div class="d-flex mb-1 justify-center justify-md-start">
-                    <i
-                      aria-hidden="true"
-                      class="v-icon notranslate me-2 mdi mdi-map-marker theme--light white--text"
-                      style="font-size: 15px"
-                    />
-                    <h6 class="font-weight-light white--text">New York, US</h6>
+                    <v-icon class="white--text" small>mdi-map-marker</v-icon>
+                    <h6 class="font-weight-medium white--text">New York, US</h6>
                   </div>
-                  <h6 class="font-weight-light white--text">
+                  <h6 class="font-weight-medium white--text">
                     Bigtime foodie..out and out dessert person
                   </h6>
                 </div>
@@ -78,84 +95,21 @@
         </v-img>
       </v-col>
       <v-col class="col-12">
+        <div class="px-10 mb-3">
+          <v-btn
+            tile
+            rounded
+            color="primaryColor"
+            class="hidden-md-and-up white--text"
+            @click.stop="drawer = !drawer"
+          >
+            <v-icon left>mdi-dots-vertical</v-icon>
+            Profile Menu
+          </v-btn>
+        </div>
         <div class="box-main dashboard-box-main">
-          <div class="box-sidebar border-content-column">
-            <div class="border">
-              <h1
-                class="grey--text text-subtitle-1 pa-5 text-uppercase font-weight-regular"
-              >
-                Activity
-              </h1>
-              <div>
-                <a href="/dashboard/Review" class="dashboard-sidebar-link">
-                  <div class="px-4 d-flex justify-space-between align-center">
-                    <div class="d-flex">
-                      <i
-                        aria-hidden="true"
-                        class="v-icon notranslate me-2 mdi mdi-message-text-outline theme--light"
-                        style="font-size: 18px"
-                      />
-                      <p class="mb-0">Reviews</p>
-                    </div>
-                    <p class="mb-0">2</p>
-                  </div>
-                </a>
-              </div>
-              <router-link
-                class="dashboard-sidebar-link"
-                :to="{
-                  name: 'Photos',
-                }"
-              >
-                <div>
-                  <div class="px-4 d-flex justify-space-between align-center">
-                    <div class="d-flex">
-                      <i
-                        aria-hidden="true"
-                        class="v-icon notranslate me-2 mdi mdi-image-area theme--light"
-                        style="font-size: 18px"
-                      />
-                      <p class="mb-0">Photos</p>
-                    </div>
-                    <p class="mb-0">2</p>
-                  </div>
-                </div>
-              </router-link>
-              <div>
-                <a href="/dashboard/Followers" class="dashboard-sidebar-link">
-                  <div class="px-4 d-flex justify-space-between align-center">
-                    <div class="d-flex">
-                      <i
-                        aria-hidden="true"
-                        class="v-icon notranslate me-2 mdi mdi-account-multiple-check-outline theme--light"
-                        style="font-size: 18px"
-                      />
-                      <p class="mb-0">Followers</p>
-                    </div>
-                    <p class="mb-0">2</p>
-                  </div>
-                </a>
-              </div>
-              <div>
-                <a
-                  href="/dashboard/Bookmarks"
-                  aria-current="page"
-                  class="dashboard-sidebar-link nuxt-link-exact-active nuxt-link-active"
-                >
-                  <div class="px-4 d-flex justify-space-between align-center">
-                    <div class="d-flex">
-                      <i
-                        aria-hidden="true"
-                        class="v-icon notranslate me-2 mdi mdi-bookmark-outline theme--light"
-                        style="font-size: 18px"
-                      />
-                      <p class="mb-0">Bookmarks</p>
-                    </div>
-                    <p class="mb-0">2</p>
-                  </div>
-                </a>
-              </div>
-            </div>
+          <div class="box-sidebar border-content-column hidden-sm-and-down">
+            <activity-profile-menu />
           </div>
           <div class="px-10 box-content">
             <router-view />
@@ -167,14 +121,16 @@
 </template>
 
 <script lang="ts">
+import ActivityProfileMenu from '@/components/ActivityProfileMenu.vue';
 import FoodDataService from '../services/FoodDataService';
 import { Component, Vue } from 'vue-property-decorator';
 import type Restaurant from '@interfaces/Restaurant';
 import CardFood from '@/components/CardFood.vue'; // @ is an alias to /src
 
-@Component({ components: { CardFood } })
+@Component({ components: { CardFood, ActivityProfileMenu } })
 /** Section */
 export default class SectionParts extends Vue {
+  drawer: boolean | null = false;
   restaurants: Array<Restaurant> = [];
 
   listAllRestaurant() {
@@ -234,26 +190,10 @@ export default class SectionParts extends Vue {
   position: relative;
 }
 .box-main .box-content {
-  width: calc(100% - 280px);
+  width: 100%;
 }
 .box-main .box-sidebar {
-  background-color: #fff;
   width: 280px;
   transition: all 0.3s ease-in;
-}
-.border {
-  border: 1px solid #dae1e7 !important;
-  border-radius: 10px !important;
-}
-.dashboard-box-main .dashboard-sidebar-link {
-  color: #2b3445 !important;
-  text-decoration: none;
-  border-left: 3px solid #fff;
-  display: block;
-  margin-bottom: 16px;
-}
-.dashboard-box-main .dashboard-sidebar-link:hover {
-  color: #d23f57 !important;
-  border-left: 3px solid #d23f57;
 }
 </style>

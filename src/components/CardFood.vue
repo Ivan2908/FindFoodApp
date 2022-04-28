@@ -23,7 +23,7 @@
               hover
               class="mr-2"
             />
-            <span class="primary--text text-subtitle-2">
+            <span class="primary--text text-subtitle-1">
               {{ restaurant.reviews }} Reviews
             </span>
           </v-card-text>

@@ -42,7 +42,7 @@
             <v-list-item-title>Categories</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item :to="{ name: 'Account' }">
+        <v-list-item :to="{ name: 'Photos' }">
           <v-list-item-icon>
             <v-icon>mdi-account</v-icon>
           </v-list-item-icon>
@@ -73,11 +73,11 @@
             </v-icon>
           </v-btn>
         </div>
-        <div>
+        <div class="hidden-md-and-down white--text">
           Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
           Mauris cursus commodo interdum.
         </div>
-        <div>
+        <div class="white--text">
           {{ new Date().getFullYear() }} —
           <strong>Find Food</strong>
         </div>
@@ -96,15 +96,6 @@
           />
         </svg>
       </div>
-      <!-- <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#0099ff"
-            fill-opacity="1"
-            d="M0,288L60,261.3C120,235,240,181,360,133.3C480,85,600,43,720,53.3C840,64,960,128,1080,144C1200,160,1320,128,1380,112L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          />
-        </svg>
-      </div> -->
     </v-footer>
 
     <v-overlay v-show="loading" z-index="999">
@@ -259,6 +250,7 @@ html {
   display: flex;
   flex-direction: column;
   min-height: 350px;
+  width: 100%;
   justify-content: flex-end;
   padding: 30px 30vw;
   z-index: 9;
@@ -315,6 +307,6 @@ html {
 }
 
 .custom-shape-divider-bottom-1651036633 .shape-fill {
-  fill: #4a90e2;
+  fill: #1b6bc7;
 }
 </style>

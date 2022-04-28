@@ -1,12 +1,13 @@
 <template>
   <v-container class="py-15 heroClass">
     <div class="text-center mb-10 white--text">
-      <h1>Descubre la mejor comida en Barranquilla</h1>
-      <span>Enamora a tu paladar con los mejores restaurantes</span>
+      <h1>Discover the best of Barranquilla</h1>
+      <span>Fall in love with your palate with the best restaurants</span>
     </div>
     <div class="baseSearch">
       <v-text-field
         class="searchHero"
+        v-model="search"
         prepend-inner-icon="mdi-magnify"
         label="Busca algun restaurante"
         single-line
@@ -23,12 +24,26 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 /** Section */
-export default class HeroSection extends Vue {}
+export default class HeroSection extends Vue {
+  /** Search Input */
+  get search(): string {
+    return this.$store.getters.search;
+  }
+
+  /**
+   * Set Search Input
+   *
+   * @param value - Visibility
+   */
+  set search(value: string) {
+    this.$store.dispatch('setSearch', value);
+  }
+}
 </script>
 
 <style scoped>
 .heroClass {
-  background-image: url(https://foodhub-nuxt.vercel.app/_nuxt/img/header-bg.d39c465.png);
+  background-image: url('./src/assets/bannerHeroSearch.jpg');
   background-size: cover;
   border-radius: 0.5rem;
   width: 100%;

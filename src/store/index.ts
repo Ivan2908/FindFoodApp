@@ -13,6 +13,7 @@ import Vue from 'vue';
 import VuexPersistence from 'vuex-persist';
 
 // Modules
+import type Restaurant from '@interfaces/Restaurant';
 import ConfigModule from './ConfigModule';
 
 Vue.use(Vuex);
@@ -27,6 +28,10 @@ export interface RootState {
   message?: string;
   /** Error Message */
   error?: string;
+  /** Search Input */
+  search: string;
+  /** List of Restaurants */
+  restaurants: Array<Restaurant>;
 }
 
 /** State Default value */
@@ -35,6 +40,8 @@ const state: RootState = {
   progress: 0,
   message: undefined,
   error: undefined,
+  search: '',
+  restaurants: [],
 };
 
 /** Getters */
@@ -43,6 +50,8 @@ const getters: GetterTree<RootState, RootState> = {
   progress: (s): number => s.progress,
   message: (s): string | undefined => s.message,
   error: (s): string | undefined => s.error,
+  search: (s): string | undefined => s.search,
+  restaurants: (s): Array<Restaurant> => s.restaurants,
 };
 
 /** Mutations */
@@ -83,6 +92,24 @@ const mutations: MutationTree<RootState> = {
    */
   storeError(s, error: string) {
     s.error = error;
+  },
+  /**
+   * Store error message
+   *
+   * @param s - Vuex state
+   * @param search - Payload
+   */
+  storeSearch(s, search: string) {
+    s.search = search;
+  },
+  /**
+   * Store error message
+   *
+   * @param s - Vuex state
+   * @param restaurants - Payload
+   */
+  storeRestaurants(s, restaurants: Array<Restaurant>) {
+    s.restaurants = restaurants;
   },
 };
 
@@ -130,6 +157,27 @@ const actions: ActionTree<RootState, RootState> = {
   setError(context: ActionContext<RootState, RootState>, error?) {
     context.commit('storeError', error);
   },
+  /**
+   * Set Search message
+   *
+   * @param context - Vuex Context
+   * @param search - Error message etc.
+   */
+  setSearch(context: ActionContext<RootState, RootState>, search: string) {
+    context.commit('storeSearch', search);
+  },
+  /**
+   * Set restaurants list
+   *
+   * @param context - Vuex Context
+   * @param restaurants - Error message etc.
+   */
+  setRestaurants(
+    context: ActionContext<RootState, RootState>,
+    restaurants: Array<Restaurant>
+  ) {
+    context.commit('storeRestaurants', restaurants);
+  },
 };
 
 /** VuexStore */
@@ -149,19 +197,6 @@ const store: StoreOptions<RootState> = {
       storage: window.localStorage,
       modules: ['ConfigModule'],
     }).plugin,
-    /*
-    // store as session storage
-    new VuexPersistence({
-      key: import.meta.env.VITE_APP_WEBSTORAGE_NAMESPACE,
-      storage: window.sessionStorage,
-      modules: ['SomeModule'],
-    }).plugin,
-    // store as Indexed DB (using vuex-persist-indexeddb)
-    createPersistedState({
-      key: import.meta.env.VITE_APP_WEBSTORAGE_NAMESPACE,
-      paths: ['SomeLargeModule'],
-    }),
-    */
   ],
 };
 

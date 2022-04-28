@@ -32,7 +32,7 @@ rules:
   new-cap: off
   no-invalid-this: off
   no-unused-vars: warn
-  require-jsdoc: warn
+  require-jsdoc: off
   tsdoc/syntax: warn
   valid-jsdoc: off
   vue/html-self-closing: [error, html: { void: always }]

@@ -17,6 +17,10 @@ loadFonts();
 
 Vue.use(Vuetify);
 
+const theme = {
+  primaryColor: '#1b6bc7',
+};
+
 export default new Vuetify({
   icons: {
     iconfont: 'mdi',
@@ -40,6 +44,10 @@ export default new Vuetify({
         },
       },
       customProperties: true,
+    },
+    themes: {
+      dark: theme,
+      light: theme,
     },
   },
 });

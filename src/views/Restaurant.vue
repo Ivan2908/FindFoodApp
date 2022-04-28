@@ -20,42 +20,16 @@
       <v-col cols="12" class="mt-3">
         <div class="d-flex justify-space-between flex-wrap align-center mb-3">
           <h1 class="me-2">Pizza Hut</h1>
-          <div class="mb-3">
-            <span>
-              <i
-                aria-hidden="true"
-                class="v-icon notranslate mdi mdi-star theme--light warning--text"
-                style="font-size: 16px"
-              />
-            </span>
-            <span>
-              <i
-                aria-hidden="true"
-                class="v-icon notranslate mdi mdi-star theme--light warning--text"
-                style="font-size: 16px"
-              />
-            </span>
-            <span>
-              <i
-                aria-hidden="true"
-                class="v-icon notranslate mdi mdi-star theme--light warning--text"
-                style="font-size: 16px"
-              />
-            </span>
-            <span>
-              <i
-                aria-hidden="true"
-                class="v-icon notranslate mdi mdi-star theme--light warning--text"
-                style="font-size: 16px"
-              />
-            </span>
-            <span>
-              <i
-                aria-hidden="true"
-                class="v-icon notranslate mdi mdi-star theme--light warning--text"
-                style="font-size: 16px"
-              />
-            </span>
+          <div class="mb-3 d-flex">
+            <v-rating
+              :value="4"
+              dense
+              color="orange"
+              background-color="orange"
+              hover
+              class="mr-2"
+            />
+
             <span class="text-14 me-1">
               4.5
               <span class="grey--text">(1004)</span>
@@ -68,39 +42,22 @@
         <div
           class="grey--text text--darken-1 align-middle text-14 mb-4 d-flex align-center flex-wrap"
         >
-          <i
-            aria-hidden="true"
-            class="v-icon notranslate v-icon--left mdi mdi-map-marker theme--light grey--text textClass"
-          />
-          The Dorothy Ross Friedman Residence, NY, US -
-          <a
-            href="/resturant/FoodMenu"
-            aria-current="page"
-            class="grey--text text--darken-3 nuxt-link-exact-active nuxt-link-active"
-          >
-            Show Map
-          </a>
+          <v-icon class="grey--text textClass">mdi-map-marker</v-icon>
+          The Dorothy Ross Friedman Residence, NY, US - Show Map
         </div>
         <div
           class="grey--text text--darken-1 align-middle text-14 mb-4 d-flex align-center flex-wrap"
         >
-          <i
-            aria-hidden="true"
-            class="v-icon notranslate v-icon--left mdi mdi-clock-outline theme--light grey--text"
-            style="font-size: 16px"
-          />
+          <v-icon class="grey--text textClass">mdi-clock-outline</v-icon>
           <span class="primary--text me-2">Open Now</span>
           - Sun - Mon: 9am - 10pm
         </div>
         <div
           class="grey--text text--darken-1 align-middle text-14 mb-4 d-flex align-center flex-wrap"
         >
-          <i
-            aria-hidden="true"
-            class="v-icon notranslate v-icon--left mdi mdi-earth theme--light grey--text textClass"
-          />
+          <v-icon class="grey--text textClass">mdi-earth</v-icon>
           <a
-            href="/resturant/FoodMenu"
+            href="/resturant/FileNotFound"
             aria-current="page"
             class="text-decoration-none grey--text text--darken-1 nuxt-link-exact-active nuxt-link-active"
           >
