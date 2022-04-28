@@ -4,6 +4,9 @@
 
 What is important to me ?
 
+
+This project is important to me, it is a solution to a problem that can help many people. The idea is to have a space where we can have the freedom to comment and refer to restaurants to take into account. I am a person who is constantly learning and I want to have new challenges that help me boost my career as a developer.
+
 This App is using Vue2 with TypeScript in Vite. Includes [vue-router](https://router.vuejs.org/) and [Vuex](https://vuex.vuejs.org/), [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator), also it includes, [ESLint](https://eslint.org/), [Stylelint](https://stylelint.io/), and [Prettier](https://prettier.io/) are also included and are set to be executed automatically at runtime and commit.
 
 ## Recommended IDE
