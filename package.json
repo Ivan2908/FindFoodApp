@@ -1,21 +1,20 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "vite-vue2-vuetify-ts-starter",
+  "name": "findfoodapp",
   "private": true,
   "version": "0.4.2",
   "description": "Find the best restaurants in one site",
   "author": {
     "name": "Ivan Xiquez",
-    "email": "ivan.xiquezm29@hotmail.co.jp",
-    "url": "https://logue.dev/"
+    "email": "ivan.xiquezm29@hotmail.co.jp"
   },
-  "homepage": "https://github.com/logue/vite-vue2-vuetify-ts-starter",
+  "homepage": "https://github.com/Ivan2908/FindFoodApp",
   "repository": {
     "type": "git",
-    "url": "git@github.com:logue/vite-vue2-vuetify-ts-starter.git"
+    "url": "git@github.com:Ivan2908/FindFoodApp"
   },
   "bugs": {
-    "url": "https://github.com/logue/vite-vue2-vuetify-ts-starter/issues"
+    "url": "https://github.com/Ivan2908/FindFoodApp"
   },
   "engines": {
     "node": ">=16"
